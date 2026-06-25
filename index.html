@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ════════════════════════════════════════════════════════════════════
+     SAMPLE WEBSITE CONCEPT · Beautiful U Hair Dezigns, Manassas VA.
+     Real, verified facts only: name, owner (Tanya Williams), address,
+     phone, hours, services (relaxers, color, weaving, crochet per Yelp
+     & Vagaro listings), 10+ years experience, Phenix Salon Suites location.
+     Review section is a placeholder — no fabricated quotes.
+════════════════════════════════════════════════════════════════════════ -->
+
+<title>Beautiful U Hair Dezigns — Natural &amp; Textured Hair in Manassas, VA · Website Concept</title>
+<meta name="description" content="Sample website concept for Beautiful U Hair Dezigns, a licensed cosmetology studio in Manassas, VA specializing in natural and chemically treated hair." />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --accent: #6b3f5e;
+    --accent-deep: #52304a;
+    --gold: #c9a24a;
+    --ink: #1e1820;
+    --bone: #f6f1f8;
+    --bone-2: #ece3f0;
+    --card: #fdfaff;
+
+    --pico-font-family: "Jost", ui-sans-serif, system-ui, sans-serif;
+    --pico-border-radius: 0.5rem;
+    --pico-primary: var(--accent);
+    --pico-primary-hover: var(--accent-deep);
+    --pico-primary-background: var(--accent);
+    --pico-primary-hover-background: var(--accent-deep);
+    --pico-color: var(--ink);
+    --pico-background-color: var(--bone);
+  }
+
+  body { background: var(--bone); font-weight: 400; }
+  h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; letter-spacing: 0.005em; color: var(--ink); }
+  .eyebrow { font-family: "Jost", sans-serif; font-size: 0.72rem; letter-spacing: 0.28em;
+             text-transform: uppercase; color: var(--accent); font-weight: 500; }
+
+  .concept-bar { background: var(--accent); color: var(--bone); text-align: center; font-family: "Jost", sans-serif;
+                 font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.45rem 1rem; }
+
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(246,241,248,0.92);
+            backdrop-filter: blur(8px); border-bottom: 1px solid var(--bone-2); }
+  .inner { max-width: 1120px; margin: 0 auto; padding: 0.9rem 1.4rem; display: flex; align-items: center; gap: 1.2rem; }
+  .brandmark { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; font-weight: 600;
+               color: var(--ink); text-decoration: none; margin-right: auto; letter-spacing: 0.02em; }
+  .topnav { display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap; }
+  .topnav a { color: var(--ink); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; }
+  .topnav a:hover { color: var(--accent); }
+  .book-btn { background: var(--accent); color: var(--bone) !important; padding: 0.55rem 1.2rem;
+              letter-spacing: 0.06em; font-size: 0.82rem; text-transform: uppercase;
+              border-radius: 2rem; white-space: nowrap; transition: transform .15s ease, background .15s ease; }
+  .book-btn:hover { transform: translateY(-1px); background: var(--accent-deep) !important; }
+  @media (max-width: 680px) { .topnav .nav-link { display: none; } }
+
+  .hero { background: linear-gradient(160deg, var(--bone), var(--bone-2)); }
+  .hero .wrap { max-width: 1120px; margin: 0 auto; padding: 4.5rem 1.4rem 3.5rem;
+                display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+  @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; padding-top: 3rem; } }
+  .hero h1 { font-size: clamp(2.8rem, 6.5vw, 4.8rem); line-height: 1.0; margin: 1rem 0 1.2rem; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero p.sub { font-size: 1.1rem; color: #4a3a50; max-width: 40ch; margin-bottom: 2rem; }
+  .cta-row { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
+  .btn-ghost { border: 1px solid var(--ink); color: var(--ink); background: transparent;
+               padding: 0.7rem 1.4rem; border-radius: 2rem; text-decoration: none; font-size: 0.85rem;
+               letter-spacing: 0.06em; text-transform: uppercase; }
+  .btn-ghost:hover { background: var(--ink); color: var(--bone); }
+
+  .photo-box { background: linear-gradient(135deg, #c8b0d8, #a090b8);
+               border-radius: 0.8rem; display: grid; place-items: center; min-height: 420px;
+               color: #6a507a; font-family: "Jost",sans-serif; font-size: .78rem; letter-spacing: .1em;
+               text-transform: uppercase; box-shadow: 0 30px 60px -34px rgba(40,20,50,.45);
+               transform: rotate(1.2deg); }
+
+  section.band { max-width: 1120px; margin: 0 auto; padding: 4.5rem 1.4rem; }
+  .section-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .section-head h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: .5rem 0 0; }
+
+  .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 4rem; max-width: 820px; margin: 0 auto; }
+  @media (max-width: 720px) { .menu { grid-template-columns: 1fr; } }
+  .svc { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+         padding: 1rem 0; border-bottom: 1px solid var(--bone-2); }
+  .svc .name { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; color: var(--ink); }
+  .svc .desc { display: block; font-family: "Jost", sans-serif; font-size: .82rem; color: #7a6080; margin-top: .15rem; }
+  .svc .price { font-family: "Cormorant Garamond", serif; font-size: 1.4rem; color: var(--accent); white-space: nowrap; }
+  .ph { display: inline-block; border: 1px dashed #b090c0; border-radius: 6px; padding: .2rem .6rem;
+        font-family: "Jost", sans-serif; font-size: .78rem; color: #a080b0; }
+
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  @media (max-width: 720px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+  .gallery .photo-box { min-height: 220px; transform: none; box-shadow: none; font-size: .7rem; }
+
+  .about { background: var(--bone-2); }
+  .about .band { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+  @media (max-width: 860px) { .about .band { grid-template-columns: 1fr; } }
+  .about-photo { background: linear-gradient(135deg, #b8a0cc, #9080b0);
+                 border-radius: 0.8rem; min-height: 420px; display: grid; place-items: center;
+                 color: #6050a0; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+  .about p { color: #3e3045; font-size: 1.05rem; }
+
+  .quotes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+  @media (max-width: 720px) { .quotes { grid-template-columns: 1fr; } }
+  .quote { background: var(--card); border-radius: 0.8rem; padding: 2rem; text-align: center;
+           border: 1px dashed var(--bone-2); }
+  .quote .stars { color: var(--gold); letter-spacing: 3px; margin-bottom: .8rem; }
+  .quote p { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.35rem;
+             color: #2e2035; line-height: 1.4; margin: 0 0 1rem; }
+  .quote .who { font-family: "Jost", sans-serif; font-size: .8rem; letter-spacing: .1em;
+                text-transform: uppercase; color: #907090; }
+
+  .contact { background: var(--ink); color: var(--bone); }
+  .contact .band { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  @media (max-width: 860px) { .contact .band { grid-template-columns: 1fr; } }
+  .contact h2 { color: var(--bone); }
+  .contact a { color: #d8b8e8; }
+  .contact .big { font-family: "Cormorant Garamond", serif; font-size: 1.9rem; }
+  .hours { list-style: none; padding: 0; margin: 1rem 0 0; max-width: 320px; }
+  .hours li { display: flex; justify-content: space-between; padding: .5rem 0;
+              border-bottom: 1px dashed #3e2a4a; color: #c0a8d0; }
+
+  .pitch { background: var(--accent-deep); color: var(--bone); text-align: center; padding: 4rem 1.4rem; }
+  .pitch h2 { color: var(--bone); font-size: clamp(2rem, 4vw, 3rem); }
+  .pitch p { opacity: .9; max-width: 44ch; margin: 1rem auto 2rem; }
+  .pitch .btn-ghost { border-color: var(--bone); color: var(--bone); }
+  .pitch .btn-ghost:hover { background: var(--bone); color: var(--accent-deep); }
+
+  footer.site { background: #120e15; color: #a898b8; text-align: center; padding: 2.8rem 1.4rem; }
+  footer.site a { color: var(--bone); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(16px); animation: rise .8s ease forwards; }
+    .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.42s}
+    @keyframes rise { to { opacity:1; transform:none; } }
+  }
+</style>
+</head>
+<body>
+
+<div class="concept-bar">Sample website concept · for demonstration only</div>
+
+<header class="topbar">
+  <div class="inner">
+    <a href="#" class="brandmark">Beautiful U Hair Dezigns</a>
+    <nav class="topnav">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#visit" class="nav-link">Visit</a>
+      <a href="https://www.vagaro.com/beautifuluhairdezigns" target="_blank" rel="noopener" class="book-btn">Book Online</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal d1">Natural &amp; Textured Hair · Manassas, Virginia</span>
+      <h1 class="reveal d2">Your hair. <em>Cared for</em> properly.</h1>
+      <p class="sub reveal d3">Tanya Williams is a licensed cosmetologist with 10+ years serving the DMV. She specializes in natural and chemically treated hair — every client gets her full attention.</p>
+      <div class="cta-row reveal d3">
+        <a href="https://www.vagaro.com/beautifuluhairdezigns" target="_blank" rel="noopener" class="book-btn" style="padding:.85rem 1.7rem;font-size:.9rem;">Book Online</a>
+        <a href="tel:+17032204022" class="btn-ghost">Call (703) 220-4022</a>
+      </div>
+      <p class="reveal d4" style="margin-top:1.4rem;color:#5a4060;font-size:.95rem;">
+        10+ years in the DMV · Natural &amp; Chemically Treated Hair
+      </p>
+    </div>
+    <div class="photo-box reveal d4">Photo placeholder</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="band" id="services">
+  <div class="section-head">
+    <span class="eyebrow">Services</span>
+    <h2>What Tanya Does</h2>
+    <p style="color:#7a6080;font-size:.9rem;margin-top:.8rem;">Specializing in natural and chemically treated hair. Book online or call to discuss your needs.</p>
+  </div>
+  <div class="menu">
+    <div class="svc">
+      <div><span class="name">Relaxer</span><span class="desc">Chemical straightening for all hair types</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+    <div class="svc">
+      <div><span class="name">Perm</span><span class="desc">Curl definition &amp; wave services</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+    <div class="svc">
+      <div><span class="name">Color</span><span class="desc">All-over color &amp; color correction</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+    <div class="svc">
+      <div><span class="name">Weave</span><span class="desc">Sew-in weave installation &amp; maintenance</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+    <div class="svc">
+      <div><span class="name">Crochet</span><span class="desc">Crochet braids &amp; protective styles</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+    <div class="svc">
+      <div><span class="name">Wash &amp; Style</span><span class="desc">Shampoo, condition &amp; blowout or set</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+    <div class="svc">
+      <div><span class="name">Natural Hair Care</span><span class="desc">Moisture, detangle &amp; style for natural textures</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+    <div class="svc">
+      <div><span class="name">Cut &amp; Style</span><span class="desc">Precision cuts for all hair types</span></div>
+      <span class="price"><span class="ph">Consult</span></span>
+    </div>
+  </div>
+  <p style="text-align:center;color:#9070a0;font-size:.85rem;margin-top:2rem;">All pricing scoped at consultation — length, texture &amp; technique vary.</p>
+  <div style="text-align:center;margin-top:1.5rem;">
+    <a href="https://www.vagaro.com/beautifuluhairdezigns" target="_blank" rel="noopener" class="book-btn" style="padding:.85rem 1.8rem;font-size:.9rem;">Book an Appointment</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="band" style="padding-top:0;">
+  <div class="gallery">
+    <div class="photo-box">Your work here</div>
+    <div class="photo-box">Your work here</div>
+    <div class="photo-box">Your work here</div>
+    <div class="photo-box">Your work here</div>
+  </div>
+  <p style="text-align:center;color:#8060a0;font-size:.85rem;margin-top:1rem;">Photos to be added after signing.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="band">
+    <div class="about-photo">Studio photo</div>
+    <div>
+      <span class="eyebrow">About Tanya</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:.4rem 0 1rem;color:var(--ink);">A stylist who takes time to know your hair.</h2>
+      <p>Tanya Williams is a licensed cosmetologist based at Phenix Salon Suites in Manassas. She's been serving DMV clients for over a decade, specializing in both naturally textured and chemically treated hair.</p>
+      <p style="color:#5a4060;">Clients praise her for taking time to understand their hair before touching it — detangling carefully, avoiding excessive heat, and offering multiple options rather than a one-size approach.</p>
+      <a href="tel:+17032204022" class="book-btn" style="display:inline-block;margin-top:.5rem;padding:.7rem 1.4rem;">Call Tanya</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="band" id="reviews">
+  <div class="section-head">
+    <span class="eyebrow">Reviews</span>
+    <h2 style="color:var(--ink);">What clients say</h2>
+  </div>
+  <div class="quotes">
+    <figure class="quote">
+      <div class="stars">☆☆☆☆☆</div>
+      <p class="ph" style="font-family:'Jost',sans-serif;font-size:.9rem;font-style:normal;">Your review here</p>
+      <figcaption class="who">Client name · Platform</figcaption>
+    </figure>
+    <figure class="quote">
+      <div class="stars">☆☆☆☆☆</div>
+      <p class="ph" style="font-family:'Jost',sans-serif;font-size:.9rem;font-style:normal;">Your review here</p>
+      <figcaption class="who">Client name · Platform</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="visit">
+  <div class="band">
+    <div>
+      <span class="eyebrow" style="color:#c8a8d8;">Visit</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:.4rem 0 1rem;">Come see Tanya</h2>
+      <p style="color:#c0a8d0;">Phenix Salon Suites<br/>9906 Liberia Ave, Suite 102<br/>Manassas, VA 20110</p>
+      <p class="big"><a href="tel:+17032204022">(703) 220-4022</a></p>
+      <h3 style="color:var(--bone);margin-top:1.6rem;">Hours</h3>
+      <ul class="hours">
+        <li><span>Tue – Fri</span><span>9:00 – 7:00</span></li>
+        <li><span>Saturday</span><span>9:00 – 2:00</span></li>
+        <li><span>Sun &amp; Mon</span><span>Closed</span></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:1.2rem;">
+      <h3 style="color:var(--bone);font-size:1.8rem;margin:0;">Ready to book?</h3>
+      <p style="color:#c0a8d0;margin:0;">Use the online booking or call to discuss your hair goals first. Tanya is happy to answer questions before your first visit.</p>
+      <div class="cta-row">
+        <a href="https://www.vagaro.com/beautifuluhairdezigns" target="_blank" rel="noopener" class="book-btn" style="padding:.9rem 1.8rem;font-size:.9rem;">Book Online</a>
+        <a href="tel:+17032204022" class="btn-ghost" style="border-color:var(--bone);color:var(--bone);">Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="pitch">
+  <h2>Like what you see?</h2>
+  <p>This is a concept. The full site — your work, reviews, and photos — is the build. Let's make it official.</p>
+  <a href="tel:+17039275673" class="btn-ghost">Let's build it — (703) 927-5673</a>
+</section>
+
+<footer class="site">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--bone);margin:0 0 .4rem;">Beautiful U Hair Dezigns</p>
+  <p style="margin:0;font-size:.85rem;letter-spacing:.05em;">Manassas, VA · Phenix Salon Suites · <a href="tel:+17032204022">(703) 220-4022</a></p>
+  <p style="margin:1.2rem 0 0;font-size:.75rem;color:#6a5878;">Website design concept · Not affiliated with or endorsed by the business shown.</p>
+</footer>
+
+</body>
+</html>
